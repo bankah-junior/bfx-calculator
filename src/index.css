@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+select:focus,
+select:active,
+input:focus,
+input:active,
+button:active,
+button:focus {
+  border: none;
+  outline: none;
+}
+
+/* HERO SECTION */
+.hero {
+  background-image: url('assets/images/bfx_hero2.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-cover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-cover a {
+  transition: all .5s ease;
+}
+
+.hero-cover a:hover {
+  background-color: #0279F9 !important;
+  color: #fff;
+  transform: scale(1.1);
+  border: 1px solid #fff;
+}
+/* END OF HRO SECTION */
+
+/* MENU SECTION */
+.menu {
+  background-image: url('assets/images/bfx_hero1.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.menu ul {
+  box-shadow: -20px -20px 24px -4px rgba(255,255,255,0.1),20px 20px 24px -4px rgba(255,255,255,0.1),30px -14px 24px -4px rgba(255,255,255,0.1),-30px 14px 24px -4px rgba(255,255,255,0.1);
+}
+
+.menu ul li {
+  transition: all .5s ease;
+}
+
+.menu ul li:hover {
+  background-color: #0279F9 !important;
+  color: #fff;
+  height: 120%;
+  top: -10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+}
+
+.atp button {
+  transition: all .5s ease;
+  background-color: #0279F9;
+}
+
+.atp button:hover {
+  background-color: #3387e0;
+}
+
+/* END OF MENU SECTION */
+
+/* SOLUTION SECTION */
+.solution {
+  background-image: url('assets/images/bfx_result.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.atp_sol .t_pip {
+  transition: all .5s ease;
+  background-color: #0279F9;
+}
+
+.atp_sol .t_pip:hover {
+  background-color: #3387e0;
+}
+/* END OF SOLUTION SECTION */
+
+/* FAQS SECTION */
+.faqs {
+  color: #fff;
+  background-color: #08254F;
+}
+/* END OF FAQS SECTION */
+
+/* NOT FOUND SECTION */
+.notFound {
+  background-image: url('./assets/images/notFound.jpg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #ECECEC;
+}
+/* END OF NOT FOUND SECTION */
