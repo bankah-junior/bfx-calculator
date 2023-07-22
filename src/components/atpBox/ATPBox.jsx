@@ -37,10 +37,8 @@ const ATPBox = () => {
     // Checking if fields are empty
     if ((lotSize === "") || (currencyPair === "") || (totalAmount === "") || (exchangeRate === "")) {
         alert(` Fields are required! \n Percentage of TA is optional`);
-    };
-    
-    // Calculation when "Percentage of TA" is empty
-    if(totalAmountPercent === "") {
+    } else if(totalAmountPercent === "") { 
+        // Calculation when "Percentage of TA" is empty
         var pipValue = (Number(currencyPair)/Number(exchangeRate)) * Number(lotSize);
         var numberOfPips = (Number(totalAmount) / Number(pipValue));
         setCP(currencyPair);

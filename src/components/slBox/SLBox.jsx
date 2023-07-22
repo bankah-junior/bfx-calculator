@@ -31,13 +31,13 @@ const SLBox = () => {
         // GOING SHORT
         if (askSL === "") {
             if (currencyPair === "0.01") {
-                pipInRate = Number(pipsSL) / 1000;
+                pipInRate = Number(pipsSL) / 100;
                 sl = Number(bidSL) + Number(pipInRate);
                 setStopLoss(`Stop Loss = ${sl}`);
             }
 
             if (currencyPair === "0.0001") {
-                pipInRate = Number(pipsSL) / 100000;
+                pipInRate = Number(pipsSL) / 10000;
                 sl = Number(bidSL) + Number(pipInRate);
                 setStopLoss(`Stop Loss = ${sl}`);
             }
@@ -46,13 +46,13 @@ const SLBox = () => {
         // GOING LONG
         if (bidSL === "") {
             if (currencyPair === "0.01") {
-                pipInRate = Number(pipsSL) / 1000;
+                pipInRate = Number(pipsSL) / 100;
                 sl = Number(askSL) - Number(pipInRate);
                 setStopLoss(`Stop Loss = ${sl}`);
             }
     
             if (currencyPair === "0.0001") {
-                pipInRate = Number(pipsSL) / 100000;
+                pipInRate = Number(pipsSL) / 10000;
                 sl = Number(askSL) - Number(pipInRate);
                 setStopLoss(`Stop Loss = ${sl}`);
             }

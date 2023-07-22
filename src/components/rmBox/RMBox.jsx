@@ -25,11 +25,13 @@ const RMBox = () => {
 
   const handleCalculate = () => {
     // Checking if fields are empty
+    // if ((riskTolerance === "") || (stopLossPips === "")) {
+    //     alert(` All Fields are required! \n Percentage of (RT) is optional`);
+    // };
+
     if ((riskTolerance === "") || (stopLossPips === "")) {
         alert(` All Fields are required! \n Percentage of (RT) is optional`);
-    };
-
-    if ((riskTolerancePercent === "")) {
+    } else if ((riskTolerancePercent === "")) {
         lossPerPipCal = (Number(riskTolerance) / Number(stopLossPips));
         setRMAmount(riskTolerance);
         setRMAmountPercent(riskTolerancePercent);

@@ -32,15 +32,15 @@ const PTABox = () => {
     // Checking if fields are empty
     if ((lotSize === "") || (currencyPair === "") || (pipValue === "") || (exchangeRate === "")) {
       alert(` Fields are required! `);
-    };
-
-    var pipValueCalc = ((Number(currencyPair)/Number(exchangeRate)) * Number(lotSize));
-    var userTotalAmount = (Number(pipValue) * Number(pipValueCalc));
-    setCP(currencyPair);
-    setER(exchangeRate);
-    setLS(lotSize);
-    setPips(pipValue);
-    setAmount(`Amount = ${Math.ceil(userTotalAmount)}`);
+    } else {
+      var pipValueCalc = ((Number(currencyPair)/Number(exchangeRate)) * Number(lotSize));
+      var userTotalAmount = (Number(pipValue) * Number(pipValueCalc));
+      setCP(currencyPair);
+      setER(exchangeRate);
+      setLS(lotSize);
+      setPips(pipValue);
+      setAmount(`Amount = ${Math.ceil(userTotalAmount)}`);
+    }
 
   };
 

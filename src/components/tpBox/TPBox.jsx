@@ -31,13 +31,13 @@ const TPBox = () => {
         // GOING SHORT
         if (askTP === "") {
             if (currencyPair === "0.01") {
-                pipInRate = Number(pipsTP) / 1000;
+                pipInRate = Number(pipsTP) / 100;
                 tp = Number(bidTP) - Number(pipInRate);
                 setTakeProfit(`Take Profit = ${tp}`);
             }
 
             if (currencyPair === "0.0001") {
-                pipInRate = Number(pipsTP) / 100000;
+                pipInRate = Number(pipsTP) / 10000;
                 tp = Number(bidTP) - Number(pipInRate);
                 setTakeProfit(`Take Profit = ${tp}`);
             }
@@ -46,13 +46,13 @@ const TPBox = () => {
         // GOING LONG
         if (bidTP === "") {
             if (currencyPair === "0.01") {
-                pipInRate = Number(pipsTP) / 1000;
+                pipInRate = Number(pipsTP) / 100;
                 tp = Number(askTP) + Number(pipInRate);
                 setTakeProfit(`Take Profit = ${tp}`);
             }
     
             if (currencyPair === "0.0001") {
-                pipInRate = Number(pipsTP) / 100000;
+                pipInRate = Number(pipsTP) / 10000;
                 tp = Number(askTP) + Number(pipInRate);
                 setTakeProfit(`Take Profit = ${tp}`);
             }

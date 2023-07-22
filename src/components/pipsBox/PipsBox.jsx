@@ -40,10 +40,10 @@ const PipsBox = () => {
         var pipsAnswerTPShort
       
       // For Non-Yen Pairs
-        if (currencyPair === "100000") {
-            epPipsValue = Number(entryPosition) * 100000;
-            slPipsValue = Number(stopLoss) * 100000;
-            tpPipsValue = Number(takeProfit) * 100000;
+        if (currencyPair === "10000") {
+            epPipsValue = Number(entryPosition) * 10000;
+            slPipsValue = Number(stopLoss) * 10000;
+            tpPipsValue = Number(takeProfit) * 10000;
 
             pipsAnswerSlLong = epPipsValue - slPipsValue;
             pipsAnswerSlShort = slPipsValue - epPipsValue;
@@ -52,23 +52,59 @@ const PipsBox = () => {
 
             // Going Short 
             if (position === "short") {
-                setValueOfPipsSL(`SL = ${Number(pipsAnswerSlShort)}pips`);
-                setValueOfPipsTP(`TP = ${Number(pipsAnswerTPShort)}pips`);
+                // setValueOfPipsSL(`SL = ${Number(pipsAnswerSlShort)}pips`);
+                // setValueOfPipsTP(`TP = ${Number(pipsAnswerTPShort)}pips`);
+
+                if (entryPosition === "" && stopLoss === "" && takeProfit === "" ) {
+                    setValueOfPipsSL(`SL = `);
+                    setValueOfPipsTP(`TP = `);
+                } else if (entryPosition === "") {
+                    setValueOfPipsSL(`SL = Input Entry`);
+                    setValueOfPipsTP(`TP = Input Entry`);
+                } else if (stopLoss === "") {
+                    setValueOfPipsSL(`SL = `);
+                    setValueOfPipsTP(`TP = ${Number(pipsAnswerTPShort)}pips`);                    
+                } else if (takeProfit === "") {
+                    setValueOfPipsSL(`SL = ${Number(pipsAnswerSlShort)}pips`);
+                    setValueOfPipsTP(`TP = `);                    
+                } else {  
+                    setValueOfPipsSL(`SL = ${Number(pipsAnswerSlShort)}pips`);
+                    setValueOfPipsTP(`TP = ${Number(pipsAnswerTPShort)}pips`);                  
+                }
+
             }
 
             // Going Long 
             if (position === "long") {
-                setValueOfPipsSL(`SL = ${Number(pipsAnswerSlLong)}pips`);
-                setValueOfPipsTP(`TP = ${Number(pipsAnswerTPLong)}pips`);
+                // setValueOfPipsSL(`SL = ${Number(pipsAnswerSlLong)}pips`);
+                // setValueOfPipsTP(`TP = ${Number(pipsAnswerTPLong)}pips`);
+
+                if (entryPosition === "" && stopLoss === "" && takeProfit === "" ) {
+                    setValueOfPipsSL(`SL = `);
+                    setValueOfPipsTP(`TP = `);
+                } else if (entryPosition === "") {
+                    setValueOfPipsSL(`SL = Input Entry`);
+                    setValueOfPipsTP(`TP = Input Entry`);
+                } else if (stopLoss === "") {
+                    setValueOfPipsSL(`SL = `);
+                    setValueOfPipsTP(`TP = ${Number(pipsAnswerTPLong)}pips`);                  
+                } else if (takeProfit === "") {
+                    setValueOfPipsSL(`SL = ${Number(pipsAnswerSlLong)}pips`);
+                    setValueOfPipsTP(`TP = `);                    
+                } else {
+                    setValueOfPipsSL(`SL = ${Number(pipsAnswerSlLong)}pips`);
+                    setValueOfPipsTP(`TP = ${Number(pipsAnswerTPLong)}pips`);
+                }
+
             }
 
         }
 
         // For Yen Pairs
-        if (currencyPair === "1000") {
-            epPipsValue = Number(entryPosition) * 1000;
-            slPipsValue = Number(stopLoss) * 1000;
-            tpPipsValue = Number(takeProfit) * 1000;
+        if (currencyPair === "100") {
+            epPipsValue = Number(entryPosition) * 100;
+            slPipsValue = Number(stopLoss) * 100;
+            tpPipsValue = Number(takeProfit) * 100;
 
             pipsAnswerSlLong = epPipsValue - slPipsValue;
             pipsAnswerSlShort = slPipsValue - epPipsValue;
@@ -107,8 +143,8 @@ const PipsBox = () => {
                     <label for="currencyPairPips" className="text-xl mr-2">Currency Pair: </label> 
                     <select name="currencyPairPips" id="currencyPairPips" required value={currencyPair} onChange={handleChange1} className="w-100-50 text-xl bg-gray-200 rounded-lg p-2 my-4 ">
                         <option value="">select</option>
-                        <option value="100000">Non-Yen Pair</option>
-                        <option value="1000">Yen Pair</option>
+                        <option value="10000">Non-Yen Pair</option>
+                        <option value="100">Yen Pair</option>
                     </select>
                 </div>
                 <div>
